@@ -13,8 +13,8 @@ export function output_cors() {
     return new Response(null, { headers });
 }
 
-export function file_type(pathname) {
-    const ext = pathname.split('.').pop();
+export function file_type(url) {
+    const ext = url.split('?').shift().split('.').pop();
     const mines = {
         'json': 'application/json',
         'js': 'application/javascript',
