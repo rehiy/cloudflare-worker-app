@@ -7,11 +7,12 @@
 
 export async function openai_proxy(request, storage) {
     const url = new URL(request.url);
-    const auth = await openai_key(request, storage);
 
     const backend = request.url
         .replace(url.host, 'api.openai.com')
         .replace('/openai/v1/', '/v1/');
+
+    const auth = await openai_key(request, storage);
     const payload = {
         method: request.method,
         headers: {
