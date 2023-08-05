@@ -6,7 +6,7 @@
 
 import { file_type } from './comm.js';
 
-const GITHUB_URL = 'https://raw.githubusercontent.com/open-tdp/openai-chat/master';
+const GITHUB_URL = 'https://raw.githubusercontent.com/opentdp/openai-chat/master';
 
 export async function github_proxy(request) {
     const url = new URL(request.url);
